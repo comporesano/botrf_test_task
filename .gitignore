@@ -1,0 +1,6 @@
+# Lock files
+.env
+# Lock dirs
+env/
+__pycache__/
+node_modules/

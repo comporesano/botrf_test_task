@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "ESNext",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "noEmit": true,
+      "lib": ["ESNext"],
+      "allowJs": true,
+      "moduleResolution": "Node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "noFallthroughCasesInSwitch": true,
+      "paths": {
+        "*": ["./node_modules/*"]
+      }
+    },
+    "include": [
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.vue"
+    ],
+    "exclude": [
+      "node_modules",
+      ".vscode"
+    ]
+}
+  
