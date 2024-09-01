@@ -35,10 +35,15 @@ async def create_user(user: AppUser) -> Json:
         raise HTTPException(status_code=400, detail=str(e))
 
 
-@router.get('/get/{user_id}')
-async def get_user(user_id: int) -> ResponseUser:
+@router.get('/get/')
+async def get_user(user_id: int | None = None, username: str | None = None) -> ResponseUser:
     try:
-        user = await User.get(id=user_id)
+        if user_id:
+            user = await User.get(id=user_id)
+        elif username:
+            user = await User.get(username=username)
+        else:
+            raise AttributeError('Attributes does\'nt set.')
         til_days = calculate_days_til_bd(user.birth_date)
         return ResponseUser(
             id=user.id,
@@ -47,6 +52,8 @@ async def get_user(user_id: int) -> ResponseUser:
             username=user.username,
             day_until_birthday=til_days
         )
+    except AttributeError as ae:
+        raise HTTPException(status_code=400, detail=str(ae))
     except DoesNotExist:
-        raise HTTPException(status_code=400, detail='User does\'nt exist')
+        raise HTTPException(status_code=400, detail='User does\'nt exist.')
     
