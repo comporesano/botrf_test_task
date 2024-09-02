@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import FstPage from '../pages/FstPage.vue';
-import SecPage from '../pages/SecPage.vue';
+import MainPage from '../pages/MainPage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,14 +7,9 @@ const router = createRouter({
     {
       path: '/',
       name: 'first-page',
-      component: FstPage,
-    },
-    {
-      path: '/second-page',
-      name: 'second-page',
-      component: SecPage,
+      component: MainPage
     }
   ],
-})
+})  
 
 export default router;

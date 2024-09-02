@@ -21,10 +21,12 @@ router = Router()
 """Bot routing"""
 @router.message(Command('start'))
 async def start_message(msg: types.Message) -> None:
+    #params = f'?first_name={msg.from_user.first_name}&last_name={msg.from_user.last_name}&username={msg.from_user.username}'
+    params = ''
     await msg.answer(text=f'<b>Hello there, {msg.from_user.first_name}!</b>',
                      reply_markup=types.InlineKeyboardMarkup(
                          inline_keyboard=[
-                             [types.InlineKeyboardButton(text='To APP', url='https://t.me/test_task_botrf_bot/testapp')]
+                             [types.InlineKeyboardButton(text='To APP', url=f'https://t.me/test_task_botrf_bot/testapp{params}')]
                          ]),
                      parse_mode=enums.ParseMode.HTML)
 """Bot routing"""

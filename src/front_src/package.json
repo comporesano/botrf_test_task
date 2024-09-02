@@ -1,5 +1,5 @@
 {
-  "name": "front_vue_src",
+  "name": "front_src",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -13,19 +13,20 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@telegram-apps/sdk": "^1.1.3",
+    "@tma.js/sdk": "^2.7.0",
     "pinia": "^2.1.7",
+    "vite": "^5.4.2",
     "vue": "^3.4.29",
     "vue-drumroll-datetime-picker": "^2.0.0",
     "vue-router": "^4.3.3",
-    "vue-scroll-picker": "^1.2.3",
     "vue-tg": "^0.8.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
     "@tsconfig/node20": "^20.1.4",
-    "@types/node": "^20.16.2",
+    "@types/node": "^20.14.5",
     "@vitejs/plugin-vue": "^5.0.5",
-    "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/tsconfig": "^0.5.1",
@@ -37,8 +38,6 @@
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.10",
     "typescript": "~5.4.0",
-    "vite": "^5.3.1",
-    "vite-plugin-vue-devtools": "^7.3.1",
     "vue-tsc": "^2.0.21"
   }
 }

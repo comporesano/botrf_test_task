@@ -30,7 +30,7 @@ async def create_user(user: AppUser) -> Json:
         await User.create(**user.__dict__)
         return json.dumps({"data": f"User {user} created successfully!"})
     except IntegrityError:
-        pass
+        return json.dumps({"data": f"User {user} was already created!"})
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
